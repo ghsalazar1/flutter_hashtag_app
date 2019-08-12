@@ -1,4 +1,4 @@
-import 'package:hashtag/pages/login.page.dart';
+import 'package:hashtag/src/pages/login.page.dart';
 import 'package:flutter/material.dart';
 
 class URLs {

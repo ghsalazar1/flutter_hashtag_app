@@ -1,11 +1,11 @@
 
-import 'package:hashtag/models/Acesso.dart';
-import 'package:hashtag/pages/home.page.dart';
-import 'package:hashtag/pages/reset-password.page.dart';
-import 'package:hashtag/pages/signup.page.dart';
+import 'package:hashtag/src/models/Acesso.dart';
+import 'package:hashtag/src/pages/home.page.dart';
+import 'package:hashtag/src/pages/reset-password.page.dart';
+import 'package:hashtag/src/pages/signup.page.dart';
 import 'package:flutter/material.dart';
-import 'package:hashtag/services/RestController.dart';
-import 'package:hashtag/utils/Generics.dart';
+import 'package:hashtag/src/services/RestController.dart';
+import 'package:hashtag/src/utils/Generics.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -157,7 +157,7 @@ class _LoginState extends State <LoginPage> {
                         ),
                       );
                     }
-                    else{
+                    else {
                       Alert.showSimpleAlert('Aviso', _acesso.Message, 'OK', context);
                     }
                   },

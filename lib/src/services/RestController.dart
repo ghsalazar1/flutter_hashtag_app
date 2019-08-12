@@ -1,7 +1,7 @@
 import 'package:http/http.dart' as http;
-import 'package:hashtag/models/Acesso.dart';
+import 'package:hashtag/src/models/Acesso.dart';
 import 'dart:convert';
-import '../main.dart';
+import '../../main.dart';
 
 class RestController {
   static Future<Acesso> authentication(String login, String password) async {

@@ -1,4 +1,4 @@
-import 'package:hashtag/models/InternalResponse.dart';
+import 'package:hashtag/src/models/InternalResponse.dart';
 
 class Acesso extends InternalResponse {
 
@@ -28,7 +28,7 @@ class Acesso extends InternalResponse {
       );
     }
     else{
-      return Acesso(null, null, null, null, null, null, json['Message'], json['InternalStatus']);
+      return Acesso(null, null, null, null, null, null, json['Message'], _internalStatus);
     }
   } 
 
