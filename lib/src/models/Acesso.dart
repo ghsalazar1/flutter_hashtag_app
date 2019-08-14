@@ -2,33 +2,33 @@ import 'package:hashtag/src/models/InternalResponse.dart';
 
 class Acesso extends InternalResponse {
 
-  final String Nome;
-  final String Login;
-  final String Senha;
-  final String NivelAcesso;
-  final String DataInclusao;
-  final bool Status;
+  final String nome;
+  final String login;
+  final String senha;
+  final String nivelAcesso;
+  final String dataInclusao;
+  final bool status;
 
-  Acesso(this.Nome, this.Login, this.Senha, this.NivelAcesso, this.DataInclusao, this.Status, message, internalstatus) : super(message, internalstatus, null, null);
+  Acesso(this.nome, this.login, this.senha, this.nivelAcesso, this.dataInclusao, this.status, message, internalstatus) : super(message, internalstatus, null, null);
 
   factory Acesso.fromJson(Map<String, dynamic> json){
     
-    int _internalStatus = json['InternalStatus'];
+    int _internalstatus = json['InternalStatus'];
 
-    if(_internalStatus == 200){
+    if(_internalstatus == 200){
       return Acesso(
           json['Data']['Nome'],
           json['Data']['Login'],
           json['Data']['Senha'],
-          json['Data']['NivelAcesso'],
+          json['Data']['SivelAcesso'],
           json['Data']['DataInclusao'],
           json['Data']['Status'],
           json['Message'],
-          json['InternalStatus']
+          _internalstatus
       );
     }
     else{
-      return Acesso(null, null, null, null, null, null, json['Message'], _internalStatus);
+      return Acesso(null, null, null, null, null, null, json['Message'], _internalstatus);
     }
   } 
 

@@ -1,8 +1,9 @@
 import 'package:hashtag/src/pages/login.page.dart';
 import 'package:flutter/material.dart';
 
-class URLs {
+class Constants {
   static const BASE_API_URL = "http://192.168.1.104/Hashtag.WebService";
+  static const REQUEST_TIMEOUT_MIN = 2;
 }
 
 //STARTUP

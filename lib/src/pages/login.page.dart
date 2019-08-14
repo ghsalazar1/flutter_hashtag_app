@@ -137,19 +137,18 @@ class _LoginState extends State <LoginPage> {
                       return;
                     }
 
-                    setState(() {
-                      _isLoading = true;
-                    });
+                    setState(() { _isLoading = true; });
 
                     //ws http post request
-                    final Acesso _acesso = await RestController.authentication(_usernameController.text, _passwordController.text);
-
-                    setState(() {
-                      _isLoading = false;
+                    final Acesso _acesso = await RestController.authentication(_usernameController.text, _passwordController.text).catchError((error) => {
+                      Alert.showSimpleAlert('Aviso', 'Ocorreu um erro no servidor.\n' +  error.toString(), 'OK', context),
+                      setState(() { _isLoading = false; })
                     });
 
+                    setState(() { _isLoading = false; });
+
                     //ws http post response validation
-                    if(_acesso.InternalStatus == 200 && _acesso.Status) {
+                    if(_acesso.internalStatus == 200 && _acesso.status) {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -158,7 +157,7 @@ class _LoginState extends State <LoginPage> {
                       );
                     }
                     else {
-                      Alert.showSimpleAlert('Aviso', _acesso.Message, 'OK', context);
+                      Alert.showSimpleAlert('Aviso', _acesso.message, 'OK', context);
                     }
                   },
                 ),
