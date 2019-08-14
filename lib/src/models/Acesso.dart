@@ -20,7 +20,7 @@ class Acesso extends InternalResponse {
           json['Data']['Nome'],
           json['Data']['Login'],
           json['Data']['Senha'],
-          json['Data']['SivelAcesso'],
+          json['Data']['NivelAcesso'],
           json['Data']['DataInclusao'],
           json['Data']['Status'],
           json['Message'],
